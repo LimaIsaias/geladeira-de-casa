@@ -26,6 +26,12 @@ public class EstoqueService {
 	public Estoque save(Estoque estoque) {
 		return estoqueRepository.save(estoque);
 	}
+	
+	public Estoque update(Long id, Estoque estoque) {
+		estoque.setId(id);
+		return save(estoque);
+	}
+	
 
 	public Estoque update(Estoque estoque) {
 		return save(estoque);
@@ -33,5 +39,9 @@ public class EstoqueService {
 
 	public void delete(Estoque estoque) {
 		estoqueRepository.delete(estoque);
+	}
+
+	public void deleteById(Long id) {
+		estoqueRepository.deleteById(id);
 	}
 }

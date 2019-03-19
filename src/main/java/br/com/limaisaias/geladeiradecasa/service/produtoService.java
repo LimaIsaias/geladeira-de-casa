@@ -10,7 +10,7 @@ import br.com.limaisaias.geladeiradecasa.model.Produto;
 import br.com.limaisaias.geladeiradecasa.repository.ProdutoRepository;
 
 @Service
-public class produtoService {
+public class ProdutoService {
 
 	@Autowired
 	private ProdutoRepository produtoRepository;
@@ -27,11 +27,16 @@ public class produtoService {
 		return produtoRepository.save(produto);
 	}
 
-	public Produto update(Produto produto) {
+	public Produto update(Long id, Produto produto) {
+		produto.setId(id);
 		return save(produto);
 	}
 
 	public void delete(Produto produto) {
 		produtoRepository.delete(produto);
+	}
+
+	public void deleteById(Long id) {
+		produtoRepository.deleteById(id);
 	}
 }
