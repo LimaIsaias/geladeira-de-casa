@@ -31,17 +31,17 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String nome;
+	private String descricao;
 
 	private BigDecimal preco;
 
-	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date validade;
 
-	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date compra;
 
 	@ManyToOne
-	@JoinColumn(name = "produto_id")
+	@JoinColumn(name = "estoque_id")
 	private Estoque estoque;
 }
