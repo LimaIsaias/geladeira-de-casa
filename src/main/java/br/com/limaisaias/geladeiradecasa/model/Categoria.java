@@ -10,11 +10,13 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 	@Entity
 	@EqualsAndHashCode
+	@NoArgsConstructor
 	@AllArgsConstructor
 	@ToString
 	@Getter
@@ -29,4 +31,5 @@ import lombok.ToString;
 
 		private String descricao;
 
+		
 }
