@@ -21,7 +21,7 @@ import lombok.ToString;
 	@ToString
 	@Getter
 	@Setter
-	public class Categoria implements Serializable {
+	public class Categoria extends AbstractEntity implements Serializable {
 
 		private static final long serialVersionUID = 1L;
 
@@ -30,6 +30,7 @@ import lombok.ToString;
 		private Long id;
 
 		private String descricao;
+
 
 		
 }
