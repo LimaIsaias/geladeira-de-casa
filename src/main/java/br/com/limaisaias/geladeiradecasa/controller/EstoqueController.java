@@ -15,11 +15,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import br.com.limaisaias.geladeiradecasa.model.Estoque;
 import br.com.limaisaias.geladeiradecasa.service.EstoqueService;
 
+@RestController
+@RequestMapping(value = "/estoques")
 public class EstoqueController {
 
 	@Autowired
@@ -45,7 +49,7 @@ public class EstoqueController {
 
 	@PutMapping("/{id}")
 	public ResponseEntity<Estoque> update(@PathVariable Long id, @Valid @RequestBody Estoque estoque) {
-		return ResponseEntity.ok(service.update(id, estoque));
+		return ResponseEntity.ok(service.save(estoque));
 	}
 
 	@GetMapping("/{id}")

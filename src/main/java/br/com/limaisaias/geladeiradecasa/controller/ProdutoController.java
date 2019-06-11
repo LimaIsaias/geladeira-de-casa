@@ -49,7 +49,7 @@ public class ProdutoController {
 
 	@PutMapping("/{id}")
 	public ResponseEntity<Produto> update(@PathVariable Long id, @Valid @RequestBody Produto produto) {
-		return ResponseEntity.ok(service.update(id, produto));
+		return ResponseEntity.ok(service.save(produto));
 	}
 
 	@GetMapping("/{id}")
